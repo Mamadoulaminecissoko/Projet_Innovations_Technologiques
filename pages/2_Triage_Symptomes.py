@@ -1,55 +1,364 @@
+
 import streamlit as st
 import json
 import os
 
-st.set_page_config(page_title="2. Triage Symptômes - MamaCare", page_icon="🩺", layout="wide")
+# --------------------------------------------------
+# CONFIGURATION
+# --------------------------------------------------
 
-st.title("🩺 Module 2 : Triage des Symptômes (Protocole PCIME OMS)")
-st.caption("Module géré par : **Mamadou Lamine CISSOKO**")
+st.set_page_config(
+    page_title="Triage pédiatrique | MamaCare IA",
+    page_icon="🩺",
+    layout="wide"
+)
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "symptomes_pcime.json")
+DATA_PATH = os.path.join(
+    os.path.dirname(__file__),
+    "..",
+    "data",
+    "symptomes_pcime.json"
+)
 
-data = {}
-if os.path.exists(DATA_PATH):
-    with open(DATA_PATH, "r", encoding="utf-8") as f:
-        data = json.load(f)
+st.markdown("""
+<style>
+    .main-title {
+        color: #176B87;
+        font-size: 32px;
+        font-weight: 800;
+    }
+    .subtitle {
+        color: #64748b;
+        font-size: 15px;
+    }
+    .section-title {
+        color: #176B87;
+        font-size: 21px;
+        font-weight: 700;
+    }
+    div.stButton > button {
+        background-color: #176B87;
+        color: white;
+        border-radius: 10px;
+        padding: 12px 20px;
+        font-weight: bold;
+        border: none;
+        width: 100%;
+    }
+    div.stButton > button:hover {
+        background-color: #12536a;
+        color: white;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
+# --------------------------------------------------
+# CHARGEMENT DES DONNEES
+# --------------------------------------------------
+
+@st.cache_data
+def charger_donnees():
+    with open(DATA_PATH, "r", encoding="utf-8") as fichier:
+        return json.load(fichier)
+
+
+try:
+    data = charger_donnees()
+except (FileNotFoundError, json.JSONDecodeError):
+    st.error("Impossible de charger les données du module.")
+    st.stop()
+
 
 danger_signs = data.get("signes_generaux_danger_oms", [])
-courants = data.get("symptomes_courants", [])
+symptomes = data.get("symptomes_courants", [])
 centres = data.get("centres_sante_ziguinchor", [])
 
-col_age, col_duree = st.columns(2)
-with col_age:
-    age_mois = st.number_input("Âge de l'enfant (en mois) :", min_value=0, max_value=60, value=6)
-with col_duree:
-    duree_jours = st.number_input("Depuis combien de jours l'enfant est-il malade ?", min_value=0, max_value=30, value=1)
 
-st.markdown("### ⚠️ Cochez si l'enfant présente l'un de ces signes :")
-dangers_coches = []
-for s in danger_signs:
-    if st.checkbox(f"{s['label_fr']} ({s['label_wo']})", key=s["code"]):
-        dangers_coches.append(s)
+# --------------------------------------------------
+# EN-TETE
+# --------------------------------------------------
 
-st.markdown("### 🔍 Autres symptômes courants observés :")
-courants_coches = []
-for c in courants:
-    if st.checkbox(c["label_fr"], key=c["code"]):
-        courants_coches.append(c)
+st.markdown(
+    '<div class="main-title">🩺 MamaCare IA</div>',
+    unsafe_allow_html=True
+)
 
-if st.button("Évaluer l'état de l'enfant"):
-    st.markdown("---")
-    # Algorithme PCIME OMS
-    if len(dangers_coches) > 0 or (age_mois < 2 and any(c["code"] == "fievre_simple" for c in courants_coches)):
-        st.error("## 🔴 ALERTE ROUGE : SIGNE GÉNÉRAL DE DANGER — URGENCE MÉDICALE")
-        st.write("**L'enfant doit être conduit IMMÉDIATEMENT au centre de santé ou aux urgences pédiatriques.** Ne lui donnez aucun comprimé sans avis médical.")
-        st.markdown("### 🏥 Centres de santé et urgences recommandés à Ziguinchor :")
+st.subheader("Module 2 : Triage des symptômes")
+
+st.markdown(
+    '<div class="subtitle">'
+    'Assistant pédagogique d’orientation sanitaire '
+    'pour les enfants de 0 à 5 ans.'
+    '</div>',
+    unsafe_allow_html=True
+)
+
+st.caption("Responsable du module : Mamadou Lamine CISSOKO")
+
+st.divider()
+
+st.info(
+    "Ce module aide à reconnaître certains signes nécessitant "
+    "une consultation. Il ne réalise aucun diagnostic médical "
+    "et ne remplace pas un professionnel de santé."
+)
+
+
+# --------------------------------------------------
+# FORMULAIRE
+# --------------------------------------------------
+
+st.markdown(
+    '<div class="section-title">👶 1. Informations sur l’enfant</div>',
+    unsafe_allow_html=True
+)
+
+with st.form("formulaire_triage"):
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        age_mois = st.number_input(
+            "Âge de l'enfant (en mois)",
+            min_value=0,
+            max_value=60,
+            value=6,
+            step=1
+        )
+
+    with col2:
+        duree_jours = st.number_input(
+            "Durée de la maladie (en jours)",
+            min_value=0,
+            max_value=30,
+            value=1,
+            step=1
+        )
+
+    st.divider()
+
+    st.markdown(
+        '<div class="section-title">'
+        '🚨 2. Signes de danger'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    st.warning(
+        "Cochez tous les signes observés. "
+        "Si un signe de danger est présent, n'attendez pas "
+        "le résultat du formulaire pour rechercher une aide médicale."
+    )
+
+    dangers_coches = []
+
+    for signe in danger_signs:
+        if st.checkbox(
+            signe["label_fr"] + " (" + signe.get("label_wo", "") + ")",
+            key="danger_" + signe["code"]
+        ):
+            dangers_coches.append(signe)
+
+    st.divider()
+
+    st.markdown(
+        '<div class="section-title">'
+        '🔍 3. Autres symptômes observés'
+        '</div>',
+        unsafe_allow_html=True
+    )
+
+    symptomes_coches = []
+
+    for symptome in symptomes:
+        if st.checkbox(
+            symptome["label_fr"],
+            key="symptome_" + symptome["code"]
+        ):
+            symptomes_coches.append(symptome)
+
+    st.divider()
+
+    evaluation = st.form_submit_button(
+        "🔎 ÉVALUER LES SYMPTÔMES"
+    )
+
+
+# --------------------------------------------------
+# ANALYSE ET ORIENTATION
+# --------------------------------------------------
+
+if evaluation:
+
+    st.divider()
+
+    codes_danger_general = {
+        "incapable_boire_teter",
+        "vomit_tout",
+        "convulsions",
+        "lethargique_inconscient"
+    }
+
+    codes_dangers = {
+        signe["code"] for signe in dangers_coches
+    }
+
+    codes_symptomes = {
+        symptome["code"] for symptome in symptomes_coches
+    }
+
+    # Aucune sélection
+    if not dangers_coches and not symptomes_coches:
+
+        st.info(
+            "Aucun symptôme n'a été sélectionné. "
+            "L'application ne peut pas établir une orientation. "
+            "Cela ne signifie pas que l'enfant est en bonne santé."
+        )
+
+    # Fièvre chez un enfant de moins de deux mois
+    elif age_mois < 2 and "fievre_simple" in codes_symptomes:
+
+        st.error(
+            "🔴 ALERTE ROUGE — ÉVALUATION MÉDICALE URGENTE"
+        )
+
+        st.write(
+            "Une fièvre chez un nourrisson de moins de deux mois "
+            "nécessite une évaluation médicale immédiate."
+        )
+
+    # Présence d'un signe de danger
+    elif dangers_coches:
+
+        if codes_dangers.intersection(codes_danger_general):
+
+            st.error(
+                "🔴 ALERTE ROUGE — SIGNE GÉNÉRAL DE DANGER"
+            )
+
+            st.write(
+                "Un signe général de danger a été signalé. "
+                "Une prise en charge médicale urgente est nécessaire."
+            )
+
+        else:
+
+            st.error(
+                "🔴 ALERTE ROUGE — SIGNE NÉCESSITANT "
+                "UNE ÉVALUATION URGENTE"
+            )
+
+            st.write(
+                "Un signe préoccupant a été sélectionné. "
+                "Faites évaluer l'enfant sans attendre."
+            )
+
+        st.markdown("### Signes sélectionnés")
+
+        for signe in dangers_coches:
+            st.write("- " + signe["label_fr"])
+
+        st.markdown("### 🏥 Structures sanitaires référencées")
+
+        st.warning(
+            "Choisissez une structure capable de prendre en charge "
+            "une urgence pédiatrique. En cas de difficulté, "
+            "contactez les services d'urgence locaux."
+        )
+
         for centre in centres:
-            st.markdown(f"- **{centre['nom']}** ({centre['type']}) — *{centre['quartier']}*")
-    elif any(c["gravite"] == "JAUNE" for c in courants_coches) or duree_jours >= 2:
-        st.warning("## 🟡 ALERTE JAUNE : SURVEILLANCE & CONSULTATION SOUS 24H")
-        for c in courants_coches:
-            st.write(f"- **{c['label_fr']}** : {c['conseil_fr']}")
-        st.info("💡 En Casamance, faites réaliser systématiquement un **Test de Diagnostic Rapide (TDR) du Paludisme** au poste de santé.")
-    else:
-        st.success("## 🟢 ZONE VERTE : SITUATION BÉNIGNE — SOINS À DOMICILE")
-        st.write("Aucun signe de gravité immédiat détecté. Continuez l'allaitement maternel régulier, nettoyez le nez et surveillez attentivement l'évolution.")
+
+            with st.container(border=True):
+                st.markdown("**🏥 " + centre["nom"] + "**")
+                st.write("Type : " + centre["type"])
+                st.write("Localisation : " + centre["quartier"])
+
+    # Symptômes nécessitant une consultation
+    elif any(
+        symptome.get("gravite") == "JAUNE"
+        for symptome in symptomes_coches
+    ):
+
+        st.warning(
+            "🟡 ALERTE JAUNE — CONSULTATION MÉDICALE "
+            "À ORGANISER RAPIDEMENT"
+        )
+
+        st.write(
+            "Les symptômes sélectionnés nécessitent "
+            "une évaluation par un professionnel de santé. "
+            "Pour la fièvre, recherchez une évaluation le jour même "
+            "afin notamment de vérifier un éventuel paludisme."
+        )
+
+        for symptome in symptomes_coches:
+
+            st.markdown("#### " + symptome["label_fr"])
+
+            if symptome["code"] == "fievre_simple":
+
+                st.write(
+                    "Continuez l'allaitement et faites évaluer "
+                    "la fièvre par un professionnel de santé."
+                )
+
+            elif symptome["code"] == "diarrhee_simple":
+
+                st.write(
+                    "Poursuivez l'allaitement. Le SRO doit être "
+                    "préparé exactement selon les instructions "
+                    "du sachet utilisé. Consultez un professionnel "
+                    "pour évaluer l'hydratation de l'enfant."
+                )
+
+            else:
+                st.write(symptome.get("conseil_fr", ""))
+
+    # Symptômes légers
+    elif symptomes_coches:
+
+        st.success(
+            "🟢 ZONE VERTE — AUCUN SIGNE DE DANGER "
+            "IDENTIFIÉ PAR LES ÉLÉMENTS SÉLECTIONNÉS"
+        )
+
+        st.write(
+            "Les symptômes sélectionnés sont décrits comme légers. "
+            "Surveillez l'évolution de l'enfant et demandez "
+            "un avis médical si son état se dégrade."
+        )
+
+        for symptome in symptomes_coches:
+            st.write("- " + symptome["label_fr"])
+
+    # Informations complémentaires
+    st.divider()
+
+    st.markdown("### 📋 Résumé de l'évaluation")
+
+    col_age, col_duree = st.columns(2)
+
+    with col_age:
+        st.metric("Âge de l'enfant", str(age_mois) + " mois")
+
+    with col_duree:
+        st.metric("Durée de la maladie", str(duree_jours) + " jour(s)")
+
+    st.caption(
+        "Résultat fourni à titre pédagogique. "
+        "Une absence de signe sélectionné ne garantit pas "
+        "l'absence de maladie."
+    )
+
+
+# --------------------------------------------------
+# PIED DE PAGE
+# --------------------------------------------------
+
+st.divider()
+
+st.caption(
+    "MamaCare IA | UASZ – L3 Ingénierie Informatique | Groupe 10"
+)
