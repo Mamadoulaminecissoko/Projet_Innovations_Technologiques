@@ -1,0 +1,22 @@
+# Environnements virtuels Python
+venv/
+.venv/
+env/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Variables secrètes (Clés API)
+.env
+.streamlit/secrets.toml
+
+# Fichiers temporaires audio générés
+temp_audio/
+*.tmp
+
+# Fichiers système Windows / Mac / Word
+.DS_Store
+Thumbs.db
+~$*

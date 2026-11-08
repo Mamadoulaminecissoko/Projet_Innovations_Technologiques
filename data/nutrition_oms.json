@@ -1,0 +1,54 @@
+{
+  "responsable": "ADJA FATOU BINETOU SARR",
+  "tranches_age": [
+    {
+      "tranche": "0 à 6 mois",
+      "titre": "Allaitement Maternel Exclusif",
+      "recommandation_fr": "De 0 à 6 mois, donner UNIQUEMENT le lait maternel à la demande, jour et nuit (au moins 8 à 12 fois par 24h). Ne donner ni eau, ni tisane, ni jus, même en période de forte chaleur : le lait maternel contient plus de 88% d'eau et tous les nutriments nécessaires.",
+      "recommandation_wo": "Li dale ci juddu ba 6 weer : ween kese la xale bi war a naan. Bul ko jox ndox, bul ko jox tisane, ndax meewum yaay am na 88% ndox ak lepp lu ko dooy.",
+      "frequence": "À la demande (jour et nuit)",
+      "aliments_interdits": ["Eau", "Tisanes", "Laits artificiels non prescrits", "Aliments solides ou bouillies"]
+    },
+    {
+      "tranche": "6 à 8 mois",
+      "titre": "Introduction des aliments de complément (Diversification)",
+      "recommandation_fr": "Poursuivre l'allaitement maternel. Introduire progressivement des aliments épais 2 à 3 fois par jour : bouillie de mil locale enrichie ('rouye' avec un peu de pâte d'arachide, farine de niébé ou poudre de pain de singe/bouye) ou purée bien écrasée de patate douce/courge/carotte avec une goutte d'huile.",
+      "recommandation_wo": "Boolel nampal bi ak lekk yu nooy 2 ba 3 yoon ci bes bi : rouye bu ñu boole ak tigadege tuuti, farine ñebbe, bouye, walla purée patate bu ñu bien boj.",
+      "frequence": "2 à 3 repas par jour + allaitement fréquent",
+      "aliments_conseilles": ["Rouye enrichi (mil + arachide)", "Farine de niébé", "Purée de patate douce / carotte", "Poudre de bouye"]
+    },
+    {
+      "tranche": "9 à 11 mois",
+      "titre": "Alimentation variée et consistante",
+      "recommandation_fr": "Continuer l'allaitement maternel. Proposer 3 à 4 repas par jour d'aliments finement hachés ou écrasés, plus 1 à 2 collations saines : bouillies épaisses, riz bien cuit avec poisson émietté sans arêtes, jaune d'œuf bien cuit, purées de légumes avec feuilles de moringa pilées.",
+      "recommandation_wo": "Nampal ko te nga jox ko 3 ba 4 repas bu nooy ci bes bi : ceeb bu ñu boj ak jen bu ñu xotti, nen bu ñu ñor, ak xobi nébédiy (moringa).",
+      "frequence": "3 à 4 repas par jour + 1 collation + allaitement",
+      "aliments_conseilles": ["Poisson frais émietté", "Jaune d'œuf bien cuit", "Légumes écrasés", "Feuilles de moringa (nébédiy)"]
+    },
+    {
+      "tranche": "12 à 24 mois et plus",
+      "titre": "Repas familial complet",
+      "recommandation_fr": "Poursuivre l'allaitement jusqu'à 2 ans au moins. L'enfant mange les repas de la famille coupés en petits morceaux (3 à 4 repas par jour) + 2 collations nutritives (fruits locaux : mangue, banane, orange, papaye ; beignets de niébé). Assurer un bol individuel pour vérifier qu'il mange sa part.",
+      "recommandation_wo": "Jokkul nampal bi ba 2 at. Xale bi mën na lekk cinu njaboot gi su ñu ko daggate bu baax, ci bol boppam. Jox ko ay doom-i garab (màngo, banaana, papaye).",
+      "frequence": "3 à 4 repas familiaux + 2 collations",
+      "aliments_conseilles": ["Plat familial équilibré (ceebu jën, mafé doux)", "Fruits locaux frais", "Produits laitiers locaux (lait caillé/soow)"]
+    }
+  ],
+  "bareme_poids_oms": {
+    "explication": "Seuils indicatifs OMS du rapport Poids / Âge chez l'enfant",
+    "categories": [
+      {
+        "statut": "Insuffisance pondérale sévère (Alerte Rouge)",
+        "action": "Consulter immédiatement le centre de santé / programme de nutrition communautaire."
+      },
+      {
+        "statut": "Poids insuffisant / Modéré (Alerte Jaune)",
+        "action": "Enrichir les repas (pâte d'arachide, moringa, huile) et faire suivre le poids en consultation post-natale."
+      },
+      {
+        "statut": "Poids normal (Zone Verte)",
+        "action": "Croissance harmonieuse, continuer l'alimentation équilibrée."
+      }
+    ]
+  }
+}

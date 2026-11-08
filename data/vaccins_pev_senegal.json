@@ -1,0 +1,69 @@
+{
+  "responsable": "COLLE SYLL",
+  "programme": "Programme Élargi de Vaccination (PEV) - Sénégal",
+  "gratuit": true,
+  "recommandation_cle": "La vaccination protège votre enfant contre les maladies graves. Elle est entièrement gratuite dans tous les postes et centres de santé publics du Sénégal. En cas de retard, ne recommencez jamais à zéro : amenez le carnet de santé pour rattraper les doses manquées.",
+  "calendrier": [
+    {
+      "etape": "Naissance (J0 à J14)",
+      "age_cible_jours": 0,
+      "age_cible_label": "Dès la naissance",
+      "vaccins": [
+        {"nom": "BCG", "protection": "Tuberculose formes graves"},
+        {"nom": "VPO 0", "protection": "Poliomyélite (dose zéro buccale)"},
+        {"nom": "Hépatite B (dose naissance)", "protection": "Hépatite B congénitale"}
+      ]
+    },
+    {
+      "etape": "6 semaines (1 mois et demi)",
+      "age_cible_jours": 42,
+      "age_cible_label": "À 6 semaines",
+      "vaccins": [
+        {"nom": "Pentavalent 1 (DTC-HepB-Hib 1)", "protection": "Diphtérie, Tétanos, Coqueluche, Hépatite B, Infections à Hib"},
+        {"nom": "VPO 1", "protection": "Poliomyélite"},
+        {"nom": "Pneumo 1", "protection": "Infections graves à pneumocoque (pneumonies, méningites)"},
+        {"nom": "Rotavirus 1", "protection": "Diarrhées sévères à rotavirus"}
+      ]
+    },
+    {
+      "etape": "10 semaines (2 mois et demi)",
+      "age_cible_jours": 70,
+      "age_cible_label": "À 10 semaines",
+      "vaccins": [
+        {"nom": "Pentavalent 2 (DTC-HepB-Hib 2)", "protection": "Diphtérie, Tétanos, Coqueluche, Hépatite B, Hib"},
+        {"nom": "VPO 2", "protection": "Poliomyélite"},
+        {"nom": "Pneumo 2", "protection": "Infections à pneumocoque"},
+        {"nom": "Rotavirus 2", "protection": "Diarrhées à rotavirus"}
+      ]
+    },
+    {
+      "etape": "14 semaines (3 mois et demi)",
+      "age_cible_jours": 98,
+      "age_cible_label": "À 14 semaines",
+      "vaccins": [
+        {"nom": "Pentavalent 3 (DTC-HepB-Hib 3)", "protection": "Diphtérie, Tétanos, Coqueluche, Hépatite B, Hib"},
+        {"nom": "VPO 3", "protection": "Poliomyélite buccale"},
+        {"nom": "VPI", "protection": "Poliomyélite injectable"},
+        {"nom": "Pneumo 3", "protection": "Infections à pneumocoque"}
+      ]
+    },
+    {
+      "etape": "9 mois",
+      "age_cible_jours": 270,
+      "age_cible_label": "À 9 mois",
+      "vaccins": [
+        {"nom": "Rougeole - Rubéole 1 (RR1)", "protection": "Rougeole et Rubéole"},
+        {"nom": "VAA (Fièvre Jaune)", "protection": "Fièvre jaune"}
+      ]
+    },
+    {
+      "etape": "15 mois",
+      "age_cible_jours": 450,
+      "age_cible_label": "À 15 mois",
+      "vaccins": [
+        {"nom": "Rougeole - Rubéole 2 (RR2)", "protection": "Rappel Rougeole et Rubéole"},
+        {"nom": "Méningite A (MenA)", "protection": "Méningite à méningocoque A"}
+      ]
+    }
+  ]
+}

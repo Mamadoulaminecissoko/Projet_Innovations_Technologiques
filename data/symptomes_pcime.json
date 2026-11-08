@@ -1,0 +1,92 @@
+{
+  "responsable": "MAMADOU LAMINE CISSOKO",
+  "signes_generaux_danger_oms": [
+    {
+      "code": "incapable_boire_teter",
+      "label_fr": "L'enfant est incapable de boire ou de téter le sein",
+      "label_wo": "Xale bi mënatul naan walla namp",
+      "gravite": "ROUGE",
+      "explication": "Signe général de danger selon le protocole PCIME de l'OMS. Risque de déshydratation sévère ou d'infection grave."
+    },
+    {
+      "code": "vomit_tout",
+      "label_fr": "L'enfant vomit tout ce qu'il avale",
+      "label_wo": "Xale bi dafay waccu lépp lu mu lekk walla mu naan",
+      "gravite": "ROUGE",
+      "explication": "Impossibilité d'hydrater l'enfant par voie orale, nécessite une prise en charge médicale immédiate."
+    },
+    {
+      "code": "convulsions",
+      "label_fr": "L'enfant a eu des convulsions (corps raide ou secousses)",
+      "label_wo": "Xale bi dafa daanu / yaram wi dafa dëgër",
+      "gravite": "ROUGE",
+      "explication": "Urgence vitale absolue (possible neuropaludisme, méningite ou hyperthermie majeure)."
+    },
+    {
+      "code": "lethargique_inconscient",
+      "label_fr": "L'enfant est très mou, difficile à réveiller (léthargique)",
+      "label_wo": "Xale bi dafa tayel lool, jafe na yee",
+      "gravite": "ROUGE",
+      "explication": "Signe neurologique ou d'épuisement sévère nécessitant une réanimation pédiatrique."
+    },
+    {
+      "code": "tirage_respiration",
+      "label_fr": "Respiration très rapide ou creusement sous les côtes",
+      "label_wo": "Nooy bi dafa gaaw lool / dënn bi dafay suuxu",
+      "gravite": "ROUGE",
+      "explication": "Signe de pneumonie grave ou de détresse respiratoire aiguë."
+    },
+    {
+      "code": "sang_selles",
+      "label_fr": "Présence de sang visible dans les selles",
+      "label_wo": "Deret ci biir bu daw bi",
+      "gravite": "ROUGE",
+      "explication": "Signe de dysenterie nécessitant un traitement médical rapide au poste de santé."
+    }
+  ],
+  "symptomes_courants": [
+    {
+      "code": "fievre_simple",
+      "label_fr": "Corps chaud / Fièvre modérée (< 48h)",
+      "gravite": "JAUNE",
+      "conseil_fr": "Découvrez légèrement l'enfant, appliquez un linge humide tiède, continuez l'allaitement. En zone d'endémie palustre (Casamance), faites réaliser un Test de Diagnostic Rapide (TDR) du paludisme au poste de santé ou auprès du DSDOM.",
+      "conseil_wo": "Wàññil yéere xale bi, soccal ko ak ser bu tooy. Demal ci poste de santé ñu defal ko TDR ngir xool ndax sibiru (palu) la."
+    },
+    {
+      "code": "diarrhee_simple",
+      "label_fr": "Diarrhée liquide sans sang (enfant éveillé qui boit bien)",
+      "gravite": "JAUNE",
+      "conseil_fr": "Donnez un sachet de SRO (Solution de Réhydratation Orale) dilué dans 1 litre d'eau propre par petites gorgées après chaque selle, et poursuivez l'allaitement. Consultez si cela dure plus de 2 jours.",
+      "conseil_wo": "Jox ko ndoxum SRO saa yu demee анаam te nga koy nampal bu baax. Su weesoo 2 fan, yóbbul ko poste de santé."
+    },
+    {
+      "code": "toux_rhume",
+      "label_fr": "Toux légère ou nez qui coule (sans gêne pour respirer)",
+      "gravite": "VERT",
+      "conseil_fr": "Nettoyez le nez de l'enfant avec du sérum physiologique, donnez-lui régulièrement le sein ou de l'eau tiède (si > 6 mois), et surveillez sa respiration.",
+      "conseil_wo": "Raxasal bakkanu xale bi ak sérum, nampal ko bu baax te nga xool ni muy nooyee."
+    }
+  ],
+  "centres_sante_ziguinchor": [
+    {
+      "nom": "Hôpital de la Paix de Ziguinchor (Service Pédiatrie & Urgences)",
+      "quartier": "Néma / Route de Bignona, Ziguinchor",
+      "type": "Hôpital de Référence (Urgences 24h/24)"
+    },
+    {
+      "nom": "Hôpital Régional de Ziguinchor (Silence)",
+      "quartier": "Quartier Silence, Ziguinchor",
+      "type": "Hôpital Régional (Urgences 24h/24)"
+    },
+    {
+      "nom": "District Sanitaire de Ziguinchor / Centre de Santé Silence",
+      "quartier": "Ziguinchor Centre",
+      "type": "Centre de Santé Maternal & Infantile"
+    },
+    {
+      "nom": "Postes de Santé Communautaires (Kandé, Lyndiane, Santhiaba, Néma)",
+      "quartier": "Proximité quartier / village",
+      "type": "Première consultation, TDR Paludisme & Vaccination PEV"
+    }
+  ]
+}

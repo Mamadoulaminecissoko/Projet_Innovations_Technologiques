@@ -1,0 +1,56 @@
+{
+  "responsable": "MAMADOU SENE",
+  "regles_ethiques": [
+    "Informer et orienter uniquement sur la base des directives officielles de l'OMS et du Ministère de la Santé du Sénégal.",
+    "Ne jamais poser de diagnostic médical.",
+    "Ne jamais prescrire de médicament ni de dosage médicamenteux.",
+    "En cas de signe général de danger (convulsions, léthargie, refus de boire/téter, vomissements incoercibles, détresse respiratoire), rediriger immédiatement vers le centre de santé le plus proche."
+  ],
+  "faq_medicale_validee": [
+    {
+      "id": "faq_1",
+      "mots_cles": ["eau", "boire", "6 mois", "allaitement", "exclusif", "tisane", "ndox"],
+      "question_fr": "Puis-je donner de l'eau à mon bébé de moins de 6 mois quand il fait chaud ?",
+      "reponse_fr": "Non. Selon l'OMS, de 0 à 6 mois, le bébé doit recevoir uniquement le lait maternel (allaitement exclusif). Le lait maternel contient déjà plus de 88 % d'eau, même par forte chaleur. Donner de l'eau ou des tisanes risque de provoquer des diarrhées graves.",
+      "reponse_wo": "Déedéet. Li dale ci juddu ba 6 weer, xale bi ween kese la war a naan. Meewum yaay dafa am 88% ndox, su tangoon sax doyna ko. Jox ko ndox mën na ko indil biir bu daw.",
+      "reponse_pu": "Alaa. Gila nde cukalel ngel jibinaa haa lebbi 6, kosam yumma tan ngel fotnoo yarde. Kosam yumma ina waɗi ndiyam 88%.",
+      "reponse_dio": "Hani. Bébé bi di 0 ba 6 mois, meew yaay rek la wara naan, boul ko diox ndox."
+    },
+    {
+      "id": "faq_2",
+      "mots_cles": ["fievre", "chaud", "corps chaud", "tangoor", "yaram bu tang", "palu"],
+      "question_fr": "Mon enfant a le corps chaud (fièvre), que dois-je faire ?",
+      "reponse_fr": "1) Déshabillez légèrement l'enfant (ne pas trop le couvrir). 2) Passez un linge humide tiède sur son front et son corps. 3) Continuez à le faire téter ou boire régulièrement. ATTENTION : Si l'enfant a moins de 2 mois, ou si la fièvre s'accompagne de convulsions, de vomissements ou de grande fatigue, allez immédiatement au poste de santé (risque de paludisme grave ou d'infection).",
+      "reponse_wo": "1) Wàññil يéere xale bi, bul ko muur lu bari. 2) Soccal ko ak ser bu tooy. 3) Nampalal ko bu baax. MOYTUL : Su xale bi amul 2 weer, walla mu feebar ba tayel, demal gaaw ci poste de santé bi gën a jege.",
+      "reponse_pu": "Ustu comci cukalel ngel, lootaa ngel ndiyam. So ngel heɓaani lebbi 2 walla ngel tampii no feewi, yah jaaw to safrirde.",
+      "reponse_dio": "Waññil yéere xale bi, diox ko mu naan. Su fekke dafa tang lool wala mu sonn, demal ci dispensaire bi."
+    },
+    {
+      "id": "faq_3",
+      "mots_cles": ["diarrhee", "selles", "liquide", "biir bu daw", "sro", "deshydratation"],
+      "question_fr": "Mon enfant a la diarrhée, comment éviter la déshydratation ?",
+      "reponse_fr": "Le danger principal de la diarrhée est la perte d'eau (déshydratation). 1) Donnez immédiatement une Solution de Réhydratation Orale (SRO / Litresal) après chaque selle liquide. 2) Continuez l'allaitement maternel plus souvent que d'habitude. 3) Si les selles contiennent du sang, si l'enfant a les yeux enfoncés ou refuse de boire, rendez-vous d'urgence au centre de santé.",
+      "reponse_wo": "Biir bu daw li ci gën a ragallu mooy xale bi ñàkk ndox. Jox ko SRO (Litresal) saa yu demee анаam, te nga koy nampal bu baax. Su amee deret ci biir bi walla mu bañ a naan, demal urgence ci poste de santé.",
+      "reponse_pu": "Hokku ngel ndiyam SRO caggal nde ngel dogi fof, jokku e muyninde ngel. So ƴiiƴam yaltii heen, yah to safrirde.",
+      "reponse_dio": "Diox ko ndox SRO ak ween bu baax. Su amee deret wala mu bañ naan, demal gaaw ci centre de santé."
+    },
+    {
+      "id": "faq_4",
+      "mots_cles": ["vaccin", "retard", "oubli", "calendrier", "ñaq", "carnet"],
+      "question_fr": "J'ai raté un rendez-vous de vaccination, faut-il tout recommencer ?",
+      "reponse_fr": "Non, on ne recommence jamais à zéro. Rendez-vous simplement au poste de santé avec le carnet de santé de l'enfant : la sage-femme ou l'infirmier rattrapera la dose manquante gratuitement selon le Programme Élargi de Vaccination (PEV) du Sénégal.",
+      "reponse_wo": "Déedéet, kenn du ko tambaliwaat ci neen. Yóbbul carnet xale bi ci poste de santé bi, sage-femme bi dina ko ñaq dose bi mu ràtte woon te doo fey dara.",
+      "reponse_pu": "Alaa, nawtu carnet cukalel ngel to poste de santé, ɓe ɓeyda heen ñawndugol ngol o ratti ngol.",
+      "reponse_dio": "Hani, yóbbul carnet bi ci poste de santé rek, sage-femme bi dina ko ñaq gratuitement."
+    },
+    {
+      "id": "faq_5",
+      "mots_cles": ["6 mois", "manger", "bouillie", "diversification", "rouye", "repas"],
+      "question_fr": "Que donner à manger à un bébé à partir de 6 mois ?",
+      "reponse_fr": "À 6 mois, tout en continuant l'allaitement maternel, introduisez des aliments complémentaires 2 à 3 fois par jour : bouillie de mil enrichie (rouye avec un peu de pâte d'arachide sans sel excessif, farine de niébé ou poudre de pain de singe/bouye), purée bien écrasée de patate douce, courge, carotte ou pomme de terre avec un filet d'huile végétale.",
+      "reponse_wo": "Su xale bi amee 6 weer, boolel nampal bi ak lekk yu nooy 2 ba 3 yoon ci bés bi : ruy bu ñu boole ak tigadege tuuti, ñébbe, bouye, walla patate bu ñu boj.",
+      "reponse_pu": "Nde ngel heɓi lebbi 6, ɓeydu heen gosi (mbusiri) 2 haa 3 laabi ñalawma kala, e tigadege walla niebe.",
+      "reponse_dio": "Su amee 6 mois, boolel ween bi ak rouye bu am tigadege tuuti, bouye, wala pomme de terre bu ñu boj."
+    }
+  ]
+}

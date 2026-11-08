@@ -1,0 +1,43 @@
+{
+  "responsable": "MAME DIARRA NDIAYE",
+  "langues_supportees": [
+    {"code": "fr", "nom": "Français"},
+    {"code": "wo", "nom": "Wolof"},
+    {"code": "pu", "nom": "Pulaar"},
+    {"code": "dio", "nom": "Diola"}
+  ],
+  "messages_cles": [
+    {
+      "id": "bienvenue",
+      "titre": "Bienvenue sur MamaCare IA",
+      "fr": "Bienvenue sur MamaCare IA, votre assistante pour la santé de la mère et de l'enfant. Choisissez votre langue et posez votre question.",
+      "wo": "Dalal ak jàmm ci MamaCare IA, sa ndimbal ci wàllu wér-gi-yaramu yaay ak xale. Tànnal sa làkk te laaj sa laaj.",
+      "pu": "Bismillaama e MamaCare IA, wallitoowo maa e cellal yumma e cukalel. Suɓo ɗemngal maa, naamndo naamnal maa.",
+      "dio": "Kassoumay fof ci MamaCare IA, ndimbal bi ci wergu yaram yaay ak xale bi. Fasal sa lakk te wax sa wax."
+    },
+    {
+      "id": "danger_urgence",
+      "titre": "Alerte Urgence Vitale",
+      "fr": "ATTENTION : Si votre enfant convulse, ne peut plus téter, vomit tout ou a du mal à respirer, emmenez-le TOUT DE SUITE au poste de santé le plus proche. Ne lui donnez aucun médicament sans avis médical.",
+      "wo": "MOYTUL : Su xale bi daanoo, mënul namp, waccu lépp walla jafe nooy, yóbbu ko TEEY TEEY ci poste de santé bi gën a jege. Bul ko jox garab mukk.",
+      "pu": "REE TO : So cukalel ngel daasii, waawaa muynude, tuuti fof walla heɓaani foofde no haaniri, naw ngel JOONI to safrirde. Woto hokku ngel lekki.",
+      "dio": "MOYTUL : Su xale bi amee convulsiyoŋ, mënatul namp wala mu waccu lepp, yobbul ko foofa ci dispensaire bi. Boul ko diox garab."
+    },
+    {
+      "id": "sro_diarrhee",
+      "titre": "Préparation du SRO contre la déshydratation",
+      "fr": "Pour préparer le SRO : versez 1 sachet entier dans 1 litre d'eau propre et fraîche. Mélangez bien. Donnez à boire à l'enfant par petites gorgées après chaque selle liquide, tout en continuant à le nourrir.",
+      "wo": "Ni ñuy defare SRO : sotti benn sachet ci 1 litre ndox mu set te lew. Wëññil ko bu baax. Jox ko xale bi muy naan tuuti tuuti saa yu amee biir bu daw, te bul tàyyi ci nampal ko.",
+      "pu": "No SRO heblirtee : werlu sase gooto e liitir ndiyam laaɓɗam. Jiiɓa no moƴƴi. Hokku cukalel ngel ina yara seeɗa seeɗa so dogii fof, jokku e muyninde ngel.",
+      "dio": "Ni ñuy ligéeye SRO : defal sachet bi ci 1 litre ndox mu set. Jox xale bi mu naan tuuti tuuti bu amee biir bu daw."
+    },
+    {
+      "id": "allaitement_exclusif",
+      "titre": "Allaitement maternel exclusif (0-6 mois)",
+      "fr": "De 0 à 6 mois, le lait maternel suffit entièrement. Ne donnez même pas une goutte d'eau : le lait de la mère contient déjà toute l'eau nécessaire pour étancher la soif du bébé.",
+      "wo": "Li dale ci juddu ba 6 weer, ween kese la xale bi soxla. Bul ko jox benn toppu ndox : meewum yaay dafa ëmb ndox mu doy ngir marum bobe bi.",
+      "pu": "Gila jibinannde haa lebbi 6, kosam yumma tan heƴi. Woto jox ngel hay toɓɓere ndiyam : kosam yumma ina jogii ndiyam heewɗam.",
+      "dio": "0 ba 6 mois, meew yaay rek la xale bi soxla. Boul ko jox ndox mukk."
+    }
+  ]
+}
