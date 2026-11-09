@@ -185,6 +185,7 @@ with st.form("formulaire_triage"):
     )
 
 
+
 # --------------------------------------------------
 # ANALYSE ET ORIENTATION
 # --------------------------------------------------
@@ -193,6 +194,7 @@ if evaluation:
 
     st.divider()
 
+    # Les quatre signes généraux de danger classiques
     codes_danger_general = {
         "incapable_boire_teter",
         "vomit_tout",
@@ -200,6 +202,7 @@ if evaluation:
         "lethargique_inconscient"
     }
 
+    # Récupération des codes sélectionnés
     codes_dangers = {
         signe["code"] for signe in dangers_coches
     }
@@ -208,7 +211,21 @@ if evaluation:
         symptome["code"] for symptome in symptomes_coches
     }
 
-    # Aucune sélection
+    # Identification des catégories de danger
+    signes_generaux = [
+        signe for signe in dangers_coches
+        if signe["code"] in codes_danger_general
+    ]
+
+    autres_signes_urgents = [
+        signe for signe in dangers_coches
+        if signe["code"] not in codes_danger_general
+    ]
+
+    # --------------------------------------------------
+    # CAS 1 : AUCUN SYMPTÔME SÉLECTIONNÉ
+    # --------------------------------------------------
+
     if not dangers_coches and not symptomes_coches:
 
         st.info(
@@ -217,7 +234,10 @@ if evaluation:
             "Cela ne signifie pas que l'enfant est en bonne santé."
         )
 
-    # Fièvre chez un enfant de moins de deux mois
+    # --------------------------------------------------
+    # CAS 2 : FIÈVRE CHEZ UN NOURRISSON DE MOINS DE 2 MOIS
+    # --------------------------------------------------
+
     elif age_mois < 2 and "fievre_simple" in codes_symptomes:
 
         st.error(
@@ -229,43 +249,39 @@ if evaluation:
             "nécessite une évaluation médicale immédiate."
         )
 
-    # Présence d'un signe de danger
-    elif dangers_coches:
+    # --------------------------------------------------
+    # CAS 3 : PRÉSENCE D'UN SIGNE GÉNÉRAL DE DANGER
+    # --------------------------------------------------
 
-        if codes_dangers.intersection(codes_danger_general):
+    elif signes_generaux:
 
-            st.error(
-                "🔴 ALERTE ROUGE — SIGNE GÉNÉRAL DE DANGER"
-            )
+        st.error(
+            "🔴 ALERTE ROUGE — SIGNE GÉNÉRAL DE DANGER"
+        )
 
-            st.write(
-                "Un signe général de danger a été signalé. "
-                "Une prise en charge médicale urgente est nécessaire."
-            )
+        st.write(
+            "Au moins un signe général de danger a été signalé. "
+            "Une évaluation médicale urgente est nécessaire."
+        )
 
-        else:
+        st.markdown("### Signes généraux sélectionnés")
 
-            st.error(
-                "🔴 ALERTE ROUGE — SIGNE NÉCESSITANT "
-                "UNE ÉVALUATION URGENTE"
-            )
-
-            st.write(
-                "Un signe préoccupant a été sélectionné. "
-                "Faites évaluer l'enfant sans attendre."
-            )
-
-        st.markdown("### Signes sélectionnés")
-
-        for signe in dangers_coches:
+        for signe in signes_generaux:
             st.write("- " + signe["label_fr"])
+
+        if autres_signes_urgents:
+
+            st.markdown("### Autres signes urgents sélectionnés")
+
+            for signe in autres_signes_urgents:
+                st.write("- " + signe["label_fr"])
 
         st.markdown("### 🏥 Structures sanitaires référencées")
 
         st.warning(
-            "Choisissez une structure capable de prendre en charge "
-            "une urgence pédiatrique. En cas de difficulté, "
-            "contactez les services d'urgence locaux."
+            "Recherchez une structure capable de prendre en charge "
+            "une urgence pédiatrique. Ne retardez pas la recherche "
+            "d'une aide médicale pour remplir ce formulaire."
         )
 
         for centre in centres:
@@ -275,65 +291,86 @@ if evaluation:
                 st.write("Type : " + centre["type"])
                 st.write("Localisation : " + centre["quartier"])
 
-    # Symptômes nécessitant une consultation
+    # --------------------------------------------------
+    # CAS 4 : AUTRES SIGNES URGENTS
+    # --------------------------------------------------
+
+    elif autres_signes_urgents:
+
+        st.error(
+            "🔴 ALERTE ROUGE — AUTRE SIGNE NÉCESSITANT "
+            "UNE ÉVALUATION URGENTE"
+        )
+
+        st.write(
+            "Un signe nécessitant une évaluation urgente "
+            "a été sélectionné. Recherchez une aide médicale "
+            "sans attendre."
+        )
+
+        st.markdown("### Signes sélectionnés")
+
+        for signe in autres_signes_urgents:
+            st.write("- " + signe["label_fr"])
+
+        st.markdown("### 🏥 Structures sanitaires référencées")
+
+        for centre in centres:
+
+            with st.container(border=True):
+                st.markdown("**🏥 " + centre["nom"] + "**")
+                st.write("Type : " + centre["type"])
+                st.write("Localisation : " + centre["quartier"])
+
+    # --------------------------------------------------
+    # CAS 5 : SYMPTÔMES NÉCESSITANT UNE CONSULTATION
+    # --------------------------------------------------
+
     elif any(
         symptome.get("gravite") == "JAUNE"
         for symptome in symptomes_coches
     ):
 
         st.warning(
-            "🟡 ALERTE JAUNE — CONSULTATION MÉDICALE "
-            "À ORGANISER RAPIDEMENT"
+            "🟡 ALERTE JAUNE — AVIS MÉDICAL RECOMMANDÉ"
         )
 
         st.write(
-            "Les symptômes sélectionnés nécessitent "
-            "une évaluation par un professionnel de santé. "
-            "Pour la fièvre, recherchez une évaluation le jour même "
-            "afin notamment de vérifier un éventuel paludisme."
+            "Les symptômes sélectionnés nécessitent une "
+            "évaluation adaptée par un professionnel de santé."
         )
 
         for symptome in symptomes_coches:
 
             st.markdown("#### " + symptome["label_fr"])
 
-            if symptome["code"] == "fievre_simple":
+            st.write(symptome.get("conseil_fr", ""))
 
-                st.write(
-                    "Continuez l'allaitement et faites évaluer "
-                    "la fièvre par un professionnel de santé."
-                )
+    # --------------------------------------------------
+    # CAS 6 : SYMPTÔMES CLASSÉS COMME LÉGERS
+    # --------------------------------------------------
 
-            elif symptome["code"] == "diarrhee_simple":
-
-                st.write(
-                    "Poursuivez l'allaitement. Le SRO doit être "
-                    "préparé exactement selon les instructions "
-                    "du sachet utilisé. Consultez un professionnel "
-                    "pour évaluer l'hydratation de l'enfant."
-                )
-
-            else:
-                st.write(symptome.get("conseil_fr", ""))
-
-    # Symptômes légers
     elif symptomes_coches:
 
         st.success(
-            "🟢 ZONE VERTE — AUCUN SIGNE DE DANGER "
+            "🟢 ZONE VERTE — AUCUN SIGNE URGENT "
             "IDENTIFIÉ PAR LES ÉLÉMENTS SÉLECTIONNÉS"
         )
 
         st.write(
-            "Les symptômes sélectionnés sont décrits comme légers. "
-            "Surveillez l'évolution de l'enfant et demandez "
-            "un avis médical si son état se dégrade."
+            "Les symptômes sélectionnés sont classés comme légers "
+            "dans cette démonstration. Surveillez l'évolution "
+            "de l'enfant et demandez un avis médical si nécessaire."
         )
 
         for symptome in symptomes_coches:
             st.write("- " + symptome["label_fr"])
+            st.write(symptome.get("conseil_fr", ""))
 
-    # Informations complémentaires
+    # --------------------------------------------------
+    # RÉSUMÉ DE L'ÉVALUATION
+    # --------------------------------------------------
+
     st.divider()
 
     st.markdown("### 📋 Résumé de l'évaluation")
@@ -348,17 +385,7 @@ if evaluation:
 
     st.caption(
         "Résultat fourni à titre pédagogique. "
-        "Une absence de signe sélectionné ne garantit pas "
-        "l'absence de maladie."
+        "Cette démonstration ne remplace pas une évaluation "
+        "médicale. Une absence de signe sélectionné ne garantit "
+        "pas l'absence de maladie."
     )
-
-
-# --------------------------------------------------
-# PIED DE PAGE
-# --------------------------------------------------
-
-st.divider()
-
-st.caption(
-    "MamaCare IA | UASZ – L3 Ingénierie Informatique | Groupe 10"
-)
