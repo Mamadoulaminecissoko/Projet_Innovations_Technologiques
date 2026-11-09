@@ -1,54 +1,268 @@
 {
   "responsable": "ADJA FATOU BINETOU SARR",
+  "module": "Module 3 : Nutrition Infantile OMS (0 à 5 ans) & Alimentation Locale Sénégalaise",
+  "universite": "Université Assane Seck de Ziguinchor (UASZ)",
+  "normes_croissance_poids_age": {
+    "description": "Courbes de croissance Poids-pour-Âge OMS (Garçons et Filles de 0 à 60 mois). Seuils en kg : -3SD (Malnutrition Sévère), -2SD (Insuffisance pondérale modérée), Médiane (Poids moyen idéal), +2SD (Risque de surpoids).",
+    "ages_mois": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 18, 21, 24, 30, 36, 42, 48, 54, 60],
+    "garcons": {
+      "sd3neg": [2.1, 2.9, 3.8, 4.4, 4.9, 5.3, 5.7, 5.9, 6.2, 6.4, 6.6, 6.8, 6.9, 7.4, 7.9, 8.2, 8.6, 9.3, 10.0, 10.6, 11.2, 11.8, 12.4],
+      "sd2neg": [2.5, 3.4, 4.3, 5.0, 5.6, 6.0, 6.4, 6.7, 6.9, 7.1, 7.4, 7.6, 7.7, 8.3, 8.8, 9.2, 9.7, 10.5, 11.3, 12.0, 12.7, 13.4, 14.1],
+      "mediane": [3.3, 4.5, 5.6, 6.4, 7.0, 7.5, 7.9, 8.3, 8.6, 8.9, 9.2, 9.4, 9.6, 10.3, 10.9, 11.5, 12.2, 13.3, 14.3, 15.3, 16.3, 17.3, 18.3],
+      "sd2pos": [4.4, 5.8, 7.1, 8.0, 8.7, 9.3, 9.8, 10.3, 10.7, 11.0, 11.4, 11.7, 12.0, 12.8, 13.7, 14.5, 15.3, 16.8, 18.3, 19.7, 21.2, 22.7, 24.2]
+    },
+    "filles": {
+      "sd3neg": [2.0, 2.7, 3.4, 4.0, 4.4, 4.8, 5.1, 5.3, 5.6, 5.8, 5.9, 6.1, 6.3, 6.7, 7.2, 7.6, 8.1, 8.9, 9.6, 10.3, 10.9, 11.5, 12.1],
+      "sd2neg": [2.4, 3.2, 3.9, 4.5, 5.0, 5.4, 5.7, 6.0, 6.3, 6.5, 6.7, 6.9, 7.0, 7.6, 8.1, 8.6, 9.0, 9.9, 10.8, 11.5, 12.3, 13.0, 13.7],
+      "mediane": [3.2, 4.2, 5.1, 5.8, 6.4, 6.9, 7.3, 7.6, 7.9, 8.2, 8.5, 8.7, 8.9, 9.6, 10.2, 10.9, 11.5, 12.7, 13.9, 15.0, 16.1, 17.2, 18.2],
+      "sd2pos": [4.2, 5.5, 6.6, 7.5, 8.2, 8.8, 9.3, 9.8, 10.2, 10.4, 10.9, 11.2, 11.5, 12.4, 13.0, 13.9, 14.8, 16.5, 18.1, 19.8, 21.5, 23.2, 24.9]
+    }
+  },
   "tranches_age": [
     {
+      "id": "0_6",
       "tranche": "0 à 6 mois",
-      "titre": "Allaitement Maternel Exclusif",
-      "recommandation_fr": "De 0 à 6 mois, donner UNIQUEMENT le lait maternel à la demande, jour et nuit (au moins 8 à 12 fois par 24h). Ne donner ni eau, ni tisane, ni jus, même en période de forte chaleur : le lait maternel contient plus de 88% d'eau et tous les nutriments nécessaires.",
-      "recommandation_wo": "Li dale ci juddu ba 6 weer : ween kese la xale bi war a naan. Bul ko jox ndox, bul ko jox tisane, ndax meewum yaay am na 88% ndox ak lepp lu ko dooy.",
-      "frequence": "À la demande (jour et nuit)",
-      "aliments_interdits": ["Eau", "Tisanes", "Laits artificiels non prescrits", "Aliments solides ou bouillies"]
+      "titre": "Allaitement Maternel Exclusif (AME)",
+      "badge": "Priorité Absolue OMS",
+      "recommandation_fr": "De 0 à 6 mois révolus, l'enfant doit recevoir UNIQUEMENT le lait maternel à la demande, jour et nuit (au moins 8 à 12 tétées par 24h). Ne donner AUCUN autre liquide : ni eau, ni tisane, ni jus, même en période de forte chaleur casamançaise. Le lait maternel contient plus de 88% d'eau pure et tous les anticorps nécessaires pour immuniser le nourrisson.",
+      "recommandation_wo": "Li dale ci juddu ba 6 weer : ween kese la xale bi war a naan, bëccëg ak guddi (8 ba 12 yoon ci 24h). Bul ko jox ndox, bul ko jox tisane, ndax meewum yaay am na 88% ndox ak lepp lu ko dooy ngir aar ko ci tawat.",
+      "frequence": "À la demande de l'enfant (minimum 8 à 12 fois par 24h)",
+      "consistance": "Liquide naturel exclusif (Lait maternel uniquement)",
+      "colostrum": "Donner impérativement le colostrum (premier lait jaunâtre épais juste après l'accouchement) : c'est le tout premier vaccin naturel du bébé !",
+      "aliments_interdits": [
+        "Eau pure ou minérale (risque de diarrhée et de dénutrition)",
+        "Tisanes traditionnelles ou infusions de feuilles",
+        "Laits d'animaux (vache, chèvre) non adaptés",
+        "Bouillies précoces avant 6 mois (risque de blocage digestif et d'infections)"
+      ]
     },
     {
+      "id": "6_8",
       "tranche": "6 à 8 mois",
-      "titre": "Introduction des aliments de complément (Diversification)",
-      "recommandation_fr": "Poursuivre l'allaitement maternel. Introduire progressivement des aliments épais 2 à 3 fois par jour : bouillie de mil locale enrichie ('rouye' avec un peu de pâte d'arachide, farine de niébé ou poudre de pain de singe/bouye) ou purée bien écrasée de patate douce/courge/carotte avec une goutte d'huile.",
-      "recommandation_wo": "Boolel nampal bi ak lekk yu nooy 2 ba 3 yoon ci bes bi : rouye bu ñu boole ak tigadege tuuti, farine ñebbe, bouye, walla purée patate bu ñu bien boj.",
-      "frequence": "2 à 3 repas par jour + allaitement fréquent",
-      "aliments_conseilles": ["Rouye enrichi (mil + arachide)", "Farine de niébé", "Purée de patate douce / carotte", "Poudre de bouye"]
+      "titre": "Début de la Diversification Alimentaire",
+      "badge": "Introduction Douce",
+      "recommandation_fr": "Poursuivre impérativement l'allaitement maternel fréquent. Introduire progressivement des aliments épais 2 à 3 fois par jour : débuter par de la bouillie de mil ou de maïs enrichie (le 'rouye' local agrémenté d'une cuillère de pâte d'arachide, de farine de niébé ou de poudre de bouye) ou de la purée très lisse de patate douce et carotte.",
+      "recommandation_wo": "Jokkul nampal bi. Tambalil ko ay lekk yu nooy 2 ba 3 yoon ci bes bi : rouye dugub bu ñu boole ak tigadege tuuti, farine ñebbe walla bouye, walla purée patate bu ñu boj bu baax.",
+      "frequence": "2 à 3 repas par jour + tétées fréquentes",
+      "consistance": "Purée bien lisse ou bouillie épaisse (ne doit pas couler facilement de la cuillère)",
+      "quantite": "Commencer par 2 à 3 cuillères à café, augmenter progressivement vers 1/2 bol moyen (environ 125 ml) par repas",
+      "aliments_conseilles": [
+        "Rouye enrichi au mil + pâte d'arachide (tigadèguè)",
+        "Farine de niébé précuite et torréfiée",
+        "Purée de patate douce à chair orange (très riche en provitamine A)",
+        "Poudre de pain de singe (bouye) pour la vitamine C et le fer"
+      ],
+      "aliments_interdits": [
+        "Bouillies trop claires et diluées dans l'eau (remplissent le ventre sans nourrir)",
+        "Piments, sel en excès et cubes d'assaisonnement industriels",
+        "Aliments en morceaux durs (risque d'étouffement)"
+      ]
     },
     {
+      "id": "9_11",
       "tranche": "9 à 11 mois",
-      "titre": "Alimentation variée et consistante",
-      "recommandation_fr": "Continuer l'allaitement maternel. Proposer 3 à 4 repas par jour d'aliments finement hachés ou écrasés, plus 1 à 2 collations saines : bouillies épaisses, riz bien cuit avec poisson émietté sans arêtes, jaune d'œuf bien cuit, purées de légumes avec feuilles de moringa pilées.",
-      "recommandation_wo": "Nampal ko te nga jox ko 3 ba 4 repas bu nooy ci bes bi : ceeb bu ñu boj ak jen bu ñu xotti, nen bu ñu ñor, ak xobi nébédiy (moringa).",
-      "frequence": "3 à 4 repas par jour + 1 collation + allaitement",
-      "aliments_conseilles": ["Poisson frais émietté", "Jaune d'œuf bien cuit", "Légumes écrasés", "Feuilles de moringa (nébédiy)"]
+      "titre": "Alimentation Variée, Consistante & Protéinée",
+      "badge": "Découverte des Textures",
+      "recommandation_fr": "Continuer l'allaitement maternel. Donner 3 à 4 repas par jour d'aliments finement hachés ou écrasés, plus 1 à 2 collations saines entre les repas : introduire les protéines animales indispensables (poisson frais de mer bien désarêté et émietté, jaune d'œuf bien cuit, foie de volaille) et ajouter de la poudre de feuilles de moringa (nébédiy) aux sauces.",
+      "recommandation_wo": "Nampal ko te nga jox ko 3 ba 4 repas bu nooy ci bes bi ak 1 ba 2 collation : ceeb bu ñu boj ak jen bu ñu xotti te amul xeer, nen bu ñu ñor bu baax, ak xobi nébédiy (moringa) ci cin bi.",
+      "frequence": "3 à 4 repas par jour + 1 à 2 collations nutritives + allaitement",
+      "consistance": "Aliments finement hachés ou écrasés à la fourchette, l'enfant commence à manger avec ses doigts",
+      "quantite": "1/2 bol moyen à 3/4 de bol par repas (environ 150 à 200 ml)",
+      "aliments_conseilles": [
+        "Poisson frais émietté (thiof, dorade, yabooy désarêté avec soin)",
+        "Jaune d'œuf dur bien cuit",
+        "Poudre de feuilles de Moringa / Nébédiy (très riche en fer, calcium, protéines)",
+        "Fruits locaux mûrs écrasés : banane douce, papaye, mangue sans fibres",
+        "Légumes locaux cuits à la vapeur : courge, carotte, patate"
+      ],
+      "aliments_interdits": [
+        "Blanc d'œuf cru ou coulant",
+        "Morceaux de poisson non triés avec arêtes",
+        "Sodas, bonbons, biscuits trop sucrés"
+      ]
     },
     {
-      "tranche": "12 à 24 mois et plus",
-      "titre": "Repas familial complet",
-      "recommandation_fr": "Poursuivre l'allaitement jusqu'à 2 ans au moins. L'enfant mange les repas de la famille coupés en petits morceaux (3 à 4 repas par jour) + 2 collations nutritives (fruits locaux : mangue, banane, orange, papaye ; beignets de niébé). Assurer un bol individuel pour vérifier qu'il mange sa part.",
-      "recommandation_wo": "Jokkul nampal bi ba 2 at. Xale bi mën na lekk cinu njaboot gi su ñu ko daggate bu baax, ci bol boppam. Jox ko ay doom-i garab (màngo, banaana, papaye).",
-      "frequence": "3 à 4 repas familiaux + 2 collations",
-      "aliments_conseilles": ["Plat familial équilibré (ceebu jën, mafé doux)", "Fruits locaux frais", "Produits laitiers locaux (lait caillé/soow)"]
+      "id": "12_23",
+      "tranche": "12 à 23 mois",
+      "titre": "Transition vers le Repas Familial & Bol Individuel",
+      "badge": "Autonomie Nutritionnelle",
+      "recommandation_fr": "Poursuivre l'allaitement au sein jusqu'à 2 ans au moins. L'enfant partage désormais les plats familiaux sains (ceebu jën doux, mafé doux, soupe kandia douce) coupés en petits morceaux. Règle capitale : toujours lui servir son propre BOL INDIVIDUEL pour s'assurer qu'il mange sa part entière de poisson, de légumes et de céréales sans compétition.",
+      "recommandation_wo": "Jokkul nampal bi ba mu am 2 at. Xale bi mën na lekk cinu njaboot gi su ñu ko daggate bu baax. Teeral ko ci bol boppam ngir xam li mu lekk ci jën ak legume yi.",
+      "frequence": "3 à 4 repas familiaux + 2 collations saines (fruits, beignets de niébé, soow)",
+      "consistance": "Aliments de la famille découpés en petits morceaux faciles à mâcher",
+      "quantite": "3/4 à 1 bol individuel plein par repas (environ 250 ml)",
+      "aliments_conseilles": [
+        "Plat familial sénégalais allégé en piment et sel (riz au poisson, couscous de mil)",
+        "Lait caillé local pasteurisé (Soow) ou yaourt artisanal sain",
+        "Fruits locaux de saison coupés en dés : mangue, papaye, goyave",
+        "Beignets traditionnels de niébé (akara doux) faits maison avec huile propre"
+      ],
+      "aliments_interdits": [
+        "Partager le grand bol commun sans bol individuel (l'enfant mange trop lentement et n'a pas sa part)",
+        "Plats trop pimentés ou excessivement gras"
+      ]
+    },
+    {
+      "id": "24_59",
+      "tranche": "24 à 59 mois (2 à 5 ans)",
+      "titre": "Croissance de l'Enfant d'Âge Préscolaire",
+      "badge": "Consolidation & Vitalité",
+      "recommandation_fr": "L'enfant est sevré du sein mais a des besoins énergétiques élevés pour son développement moteur et cérébral. Maintenir 3 repas principaux équilibrés et 2 collations nutritives. Veiller à un apport quotidien suffisant en fer (feuilles vertes de moringa, viande, abats, poisson) pour prévenir l'anémie infantile.",
+      "recommandation_wo": "Xale bi dëgër na, waaye dafa soxla doole ngir mag ak jàng bu baax. Jox ko 3 repas ak 2 goûter ci bes bi. Bàyyil xel ñebbe, xobi nébédiy ak jën ngir dakkal manke deret (anémie).",
+      "frequence": "3 repas équilibrés par jour + 2 collations fortifiantes",
+      "consistance": "Aliments familiaux complets et variés",
+      "quantite": "1 bol complet individuel par repas",
+      "aliments_conseilles": [
+        "Repas riches en fer et micronutriments (haricots locaux, niébé, moringa, viande)",
+        "Poissons locaux riches en oméga-3",
+        "Laitages locaux fermentés et fruits locaux gorgés de vitamines",
+        "Eau potable propre conservée dans un canari propre avec couvercle"
+      ],
+      "aliments_interdits": [
+        "Grignotages ultra-transformés et chips industriels",
+        "Boissons gazeuses et sirops chimiques qui coupent l'appétit"
+      ]
     }
   ],
-  "bareme_poids_oms": {
-    "explication": "Seuils indicatifs OMS du rapport Poids / Âge chez l'enfant",
-    "categories": [
+  "recettes_locales_enrichies": [
+    {
+      "id": "rouye_enrichi",
+      "nom": "🍲 Le Rouye Enrichi Casamançais (Mil + Niébé + Arachide)",
+      "age_cible": "Dès 6 mois",
+      "temps_preparation": "20 minutes",
+      "cout": "Très économique (ingrédients du marché local)",
+      "valeur_nutritionnelle": "Riche en énergie (glucides lents), protéines végétales complètes et acides gras essentiels pour le cerveau de bébé.",
+      "ingredients": [
+        "3 cuillères à soupe de farine de mil tamisée (souna ou sanio)",
+        "1 cuillère à soupe rase de farine de niébé torréfiée (haricot local)",
+        "1 cuillère à café de pâte d'arachide pure (tigadèguè)",
+        "1 pincée de poudre de pain de singe (bouye)",
+        "1 grand verre d'eau potable propre (250 ml)"
+      ],
+      "etapes": [
+        "1. Dans une petite casserole propre, délayer à froid la farine de mil et la farine de niébé dans l'eau.",
+        "2. Mettre à feu doux en remuant continuellement avec une cuillère en bois pendant 10 à 15 minutes jusqu'à épaississement.",
+        "3. Incorporer la cuillère à café de pâte d'arachide et bien mélanger pour obtenir une texture crémeuse.",
+        "4. Retirer du feu, laisser tiédir puis saupoudrer la pincée de poudre de bouye pour apporter la touche de vitamine C.",
+        "5. Servir tiède à l'enfant à l'aide d'une petite cuillère propre."
+      ],
+      "astuce_oms": "Une bouillie nourrissante doit être assez consistante pour tenir sur la cuillère sans couler comme de l'eau. Une bouillie trop liquide remplit l'estomac sans apporter assez de calories !"
+    },
+    {
+      "id": "puree_moringa_patate",
+      "nom": "🥣 Purée Royale Solaire (Patate Douce Orange + Nébédiy + Huile)",
+      "age_cible": "Dès 7-8 mois",
+      "temps_preparation": "25 minutes",
+      "cout": "Abordable et disponible dans tous les jardins de Casamance",
+      "valeur_nutritionnelle": "Cocktail exceptionnel de vitamine A (bêta-carotène) pour la vue et l'immunité, fer bio-assimilable et lipides essentiels.",
+      "ingredients": [
+        "1 petite patate douce à chair orange (ou courge locale bien jaune)",
+        "1/2 carotte douce",
+        "1/2 cuillère à café de poudre fine de feuilles de Moringa séchées à l'ombre (Nébédiy)",
+        "1 cuillère à café d'huile végétale propre (arachide ou tournesol)",
+        "Un peu d'eau de cuisson propre"
+      ],
+      "etapes": [
+        "1. Éplucher, laver soigneusement et couper la patate douce et la carotte en petits morceaux.",
+        "2. Faire cuire à la vapeur ou dans un peu d'eau bouillante jusqu'à ce que les légumes soient très tendres (15 min).",
+        "3. Écraser finement à la fourchette dans une assiette propre.",
+        "4. Ajouter la cuillère d'huile (les matières grasses sont indispensables pour absorber la vitamine A).",
+        "5. Saupoudrer la poudre de Moringa (Nébédiy) et mélanger jusqu'à coloration dorée et homogène.",
+        "6. Laisser tiédir avant de faire goûter à bébé."
+      ],
+      "astuce_oms": "Le Moringa séché à l'ombre conserve toutes ses vitamines. Une petite pincée quotidienne suffit à protéger l'enfant contre les carences en micronutriments."
+    },
+    {
+      "id": "bol_ceeb_poisson",
+      "nom": "🐟 Petit Bol de Riz au Poisson Émietté et Légumes Écrasés",
+      "age_cible": "Dès 9 mois",
+      "temps_preparation": "15 minutes (à partir de la préparation familiale)",
+      "cout": "Partage du repas familial",
+      "valeur_nutritionnelle": "Protéines animales nobles, zinc, iode et acides gras Oméga-3 essentiels pour le système nerveux.",
+      "ingredients": [
+        "4 cuillères à soupe de riz bien cuit et moelleux (issu du plat familial non pimenté)",
+        "2 cuillères à soupe de chair de poisson frais cuit (Thiof, Dorade ou Yabooy cuit)",
+        "2 cuillères à soupe de purée de carotte, navet ou chou cuits",
+        "1 cuillère à café d'huile de cuisson du plat"
+      ],
+      "etapes": [
+        "1. Prélever la portion de l'enfant AVANT d'ajouter le piment rouge dans la marmite familiale !",
+        "2. Inspecter minutieusement le morceau de poisson avec des doigts propres pour retirer absolument toutes les arêtes.",
+        "3. Émietter très finement le poisson.",
+        "4. Écraser le riz et les légumes à la fourchette pour obtenir un mélange tendre et lié.",
+        "5. Servir dans le bol individuel de l'enfant avec une cuillère adaptée."
+      ],
+      "astuce_oms": "Ne jamais laisser l'enfant manger seul du poisson non vérifié. La vigilance sur les arêtes est primordiale."
+    },
+    {
+      "id": "bouye_soow_dessert",
+      "nom": "🥛 Crème Nutritive de Bouye (Pain de Singe) et Lait Caillé (Soow)",
+      "age_cible": "Dès 12 mois",
+      "temps_preparation": "10 minutes",
+      "cout": "Très accessible",
+      "valeur_nutritionnelle": "Calcium pour les os et les dents, probiotiques pour la flore intestinale et vitamine C naturelle.",
+      "ingredients": [
+        "1/2 verre de lait caillé doux pasteurisé ou bien préparé (Soow)",
+        "1 cuillère à soupe rase de poudre de Bouye naturelle",
+        "1/2 banane mûre écrasée pour sucrer naturellement (pas de sucre raffiné)"
+      ],
+      "etapes": [
+        "1. Écraser la demi-banane mûre en purée lisse.",
+        "2. Ajouter le lait caillé et fouetter légèrement.",
+        "3. Incorporer la poudre de bouye en saupoudrant pour éviter les grumeaux.",
+        "4. Servir immédiatement en collation d'après-midi."
+      ],
+      "astuce_oms": "Le sucre blanc raffiné est déconseillé chez les tout-petits car il favorise les caries et coupe l'appétit pour les repas salés nutritifs. Préférez toujours la douceur naturelle des fruits mûrs !"
+    }
+  ],
+  "bareme_classification_oms": {
+    "zones": [
       {
-        "statut": "Insuffisance pondérale sévère (Alerte Rouge)",
-        "action": "Consulter immédiatement le centre de santé / programme de nutrition communautaire."
+        "code": "VERT",
+        "titre": "Poids Normal (Croissance Harmonieuse)",
+        "condition": "Entre -2 Écart-Type (-2SD) et +2 Écart-Type (+2SD)",
+        "message": "Félicitations ! L'enfant présente un bon statut pondéral selon les standards de l'Organisation Mondiale de la Santé (OMS).",
+        "conduite": "Poursuivre l'alimentation équilibrée, l'allaitement maternel et la diversification selon son âge. Respecter les pesées mensuelles lors des séances de vaccination et de CPS (Consultation Post-Natale)."
       },
       {
-        "statut": "Poids insuffisant / Modéré (Alerte Jaune)",
-        "action": "Enrichir les repas (pâte d'arachide, moringa, huile) et faire suivre le poids en consultation post-natale."
+        "code": "JAUNE",
+        "titre": "Insuffisance Pondérale Modérée (MAM - Risque de dénutrition)",
+        "condition": "Entre -3 Écart-Type (-3SD) et -2 Écart-Type (-2SD)",
+        "message": "Attention : Le poids de l'enfant est en dessous de la zone verte normale de l'OMS. L'enfant présente un risque de Malnutrition Aiguë Modérée.",
+        "conduite": "1. Enrichir systématiquement chaque bouillie avec des aliments denses en énergie (pâte d'arachide, farine de niébé, un peu d'huile, moringa).\n2. Augmenter le nombre de repas par jour (+1 collation fortifiante).\n3. Présenter l'enfant au poste de santé sous 7 jours pour un contrôle nutritionnel et un dépistage du paludisme/parasitose."
       },
       {
-        "statut": "Poids normal (Zone Verte)",
-        "action": "Croissance harmonieuse, continuer l'alimentation équilibrée."
+        "code": "ROUGE",
+        "titre": "Insuffisance Pondérale Sévère (MAS - URGENCE PÉDIATRIQUE)",
+        "condition": "Inférieur à -3 Écart-Type (<-3SD)",
+        "message": "ALERTE ROUGE : Le poids de l'enfant est en zone de danger vital critique (Malnutrition Aiguë Sévère selon l'OMS).",
+        "conduite": "CONSULTATION IMMÉDIATE au Centre de Santé ou au CREN (Centre de Récupération et d'Éducation Nutritionnelle) le plus proche. Ne tentez pas d'automédication. L'enfant a besoin d'un bilan clinique complet (recherche d'œdèmes, test de l'appétit, aliments thérapeutiques prêts à l'emploi type Plumpy'Nut)."
+      },
+      {
+        "code": "ORANGE",
+        "titre": "Poids Supérieur à la Moyenne (> +2SD)",
+        "condition": "Supérieur à +2 Écart-Type (>+2SD)",
+        "message": "Le poids de l'enfant est au-dessus des courbes moyennes OMS pour son âge.",
+        "conduite": "Éviter les boissons sucrées, sodas et bouillies sursaturées en sucre. Privilégier les légumes, les fruits frais locaux et l'activité physique par le jeu. Consulter lors de la prochaine visite de santé pour un suivi de la courbe taille/poids."
       }
     ]
-  }
+  },
+  "regles_hygiene_sevrage": [
+    {
+      "regle": "1. Lavage des mains des mamans et des enfants",
+      "detail": "Toujours laver les mains au savon et à l'eau courante propre avant de préparer les repas, avant de nourrir l'enfant et après chaque change de couche ou passage aux latrines."
+    },
+    {
+      "regle": "2. Propreté absolue des ustensiles et du bol",
+      "detail": "Utiliser un bol individuel et une cuillère bien lavés. Éviter absolument les biberons (difficiles à nettoyer sous notre climat et nids à microbes causant des diarrhées mortelles) ; préférer la tasse ou le bol et la cuillère."
+    },
+    {
+      "regle": "3. Consommation rapide des bouillies",
+      "detail": "Donner la bouillie immédiatement après cuisson et refroidissement à température tiède. Ne pas laisser reposer une bouillie plusieurs heures à l'air libre dans la chaleur."
+    },
+    {
+      "regle": "4. Eau potable sécurisée",
+      "detail": "Utiliser une eau bouillie ou traitée pour la préparation et la boisson. Conserver l'eau dans un récipient fermé avec robinet ou couvercle propre."
+    }
+  ]
 }
