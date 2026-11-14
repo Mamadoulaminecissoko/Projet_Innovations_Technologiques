@@ -1,5 +1,6 @@
 {
   "responsable": "MAME DIARRA NDIAYE",
+  "avertissement_medical": "Ces informations ne remplacent pas une consultation. En cas de signe de danger, contactez immédiatement un poste de santé. Faites vérifier les traductions médicales par un professionnel de santé et un locuteur compétent de chaque langue.",
   "langues_supportees": [
     {"code": "fr", "nom": "Français"},
     {"code": "wo", "nom": "Wolof"},
@@ -9,6 +10,7 @@
   "messages_cles": [
     {
       "id": "bienvenue",
+      "categorie": "Présentation",
       "titre": "Bienvenue sur MamaCare IA",
       "fr": "Bienvenue sur MamaCare IA, votre assistante pour la santé de la mère et de l'enfant. Choisissez votre langue et posez votre question.",
       "wo": "Dalal ak jàmm ci MamaCare IA, sa ndimbal ci wàllu wér-gi-yaramu yaay ak xale. Tànnal sa làkk te laaj sa laaj.",
@@ -17,6 +19,7 @@
     },
     {
       "id": "danger_urgence",
+      "categorie": "Urgences",
       "titre": "Alerte Urgence Vitale",
       "fr": "ATTENTION : Si votre enfant convulse, ne peut plus téter, vomit tout ou a du mal à respirer, emmenez-le TOUT DE SUITE au poste de santé le plus proche. Ne lui donnez aucun médicament sans avis médical.",
       "wo": "MOYTUL : Su xale bi daanoo, mënul namp, waccu lépp walla jafe nooy, yóbbu ko TEEY TEEY ci poste de santé bi gën a jege. Bul ko jox garab mukk.",
@@ -25,6 +28,7 @@
     },
     {
       "id": "sro_diarrhee",
+      "categorie": "Diarrhée et hydratation",
       "titre": "Préparation du SRO contre la déshydratation",
       "fr": "Pour préparer le SRO : versez 1 sachet entier dans 1 litre d'eau propre et fraîche. Mélangez bien. Donnez à boire à l'enfant par petites gorgées après chaque selle liquide, tout en continuant à le nourrir.",
       "wo": "Ni ñuy defare SRO : sotti benn sachet ci 1 litre ndox mu set te lew. Wëññil ko bu baax. Jox ko xale bi muy naan tuuti tuuti saa yu amee biir bu daw, te bul tàyyi ci nampal ko.",
@@ -33,6 +37,7 @@
     },
     {
       "id": "allaitement_exclusif",
+      "categorie": "Alimentation du bébé",
       "titre": "Allaitement maternel exclusif (0-6 mois)",
       "fr": "De 0 à 6 mois, le lait maternel suffit entièrement. Ne donnez même pas une goutte d'eau : le lait de la mère contient déjà toute l'eau nécessaire pour étancher la soif du bébé.",
       "wo": "Li dale ci juddu ba 6 weer, ween kese la xale bi soxla. Bul ko jox benn toppu ndox : meewum yaay dafa ëmb ndox mu doy ngir marum bobe bi.",
