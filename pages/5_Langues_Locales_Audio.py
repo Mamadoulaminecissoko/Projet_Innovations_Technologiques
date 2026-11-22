@@ -46,7 +46,7 @@ if not languages or not messages:
     st.stop()
 
 st.markdown(
-    "Consultez les conseils écrits en français, wolof, pulaar ou diola. "
+    "Consultez les conseils écrits en français, wolof, pulaar ou sérère. "
     "La lecture audio utilise un enregistrement ajouté au projet ou, si la "
     "langue est prise en charge, une synthèse vocale en ligne."
 )
